@@ -1,4 +1,48 @@
-.water{
+.wordista{
     text-align: center;
-    color: red;
+    color: white;
+    font-family: monospace;
+    font-size: 150px;
+    margin-bottom: 0;
+}
+
+.wordista-two{
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 40px;
+    margin-bottom: 40px;    
+}
+
+.word{
+    text-align: center;
+    color: yellow;
+    font-family: monospace;
+    font-size: 130px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.meaning{
+    text-align: center;
+    color: magenta;
+    font-family: monospace;
+    font-size: 100px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.pos{
+    text-align: center;
+    color: greenyellow;
+    font-family: monospace;
+    font-size: 60px;    
+    margin-bottom: 0;
+}
+
+.example{
+    text-align: center;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 60px;
+    margin-bottom: 0;
 }
