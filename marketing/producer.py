@@ -28,7 +28,7 @@ def create_html(word,meaning,pos,example):
         file.write(data)
 
 def make_order():
-    indexes=list(range(1,1066))        
+    indexes=list(range(1,1018))        
     for _ in range(len(indexes)):
         index=random.choice(indexes)
         indexes.remove(index)
@@ -51,7 +51,7 @@ def create_video(word):
 
     os.remove(f'{word}.html')
     os.remove(f'{word}.png')
-    
+
     print(f"video created for {word}")
 
 def get_word(index):
@@ -67,3 +67,5 @@ def clean_data():
     df=pd.read_csv('db.csv')    
     df=df.dropna()
     df.to_csv('db.csv')
+
+#make_order()
