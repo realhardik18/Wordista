@@ -9,15 +9,14 @@ def create_image(word):
     hti.screenshot(
         html_file=f'{word}.html', css_file='word.css',
         save_as=f'{word}.png',size=(1080, 1920)
-    )
-    os.remove(f'{word}.html')
+    )    
 
 def create_html(word,meaning,pos,example):
     #@ -> for word
     #% -> for meaning
     #^ -> for part of speech
     #* -> for example
-    with open('word.html','r') as file:
+    with open('template.html','r') as file:
         data=file.read()    
 
     data=data.replace('@',word)
@@ -52,5 +51,12 @@ def create_video(word):
     os.remove(f'{word}.png')
     print(f"video created for {word}")
 
-    
+def get_word(index):
+    df=pd.read_csv('db.csv')
+    data=dict()
+    data['word']=df['word'][index]
+    data['meaning']=df['definition'][index]
+    data['pos']=df['part of speech'][index]
+    data['ex']=df['example'][index]
+    return data
 
