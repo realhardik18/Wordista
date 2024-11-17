@@ -42,13 +42,16 @@ def create_video(word):
     audio_clip = AudioFileClip(audio_path)    
     audio_duration = audio_clip.duration    
 
-    image_clip = ImageClip(word, duration=audio_duration)    
+    image_clip = ImageClip(f'{word}.png', duration=audio_duration)    
     video_clip = image_clip.set_audio(audio_clip)
     
     output_path = f"output_vids/{word}.mp4"
     
     video_clip.write_videofile(output_path, fps=24)
+
+    os.remove(f'{word}.html')
     os.remove(f'{word}.png')
+    
     print(f"video created for {word}")
 
 def get_word(index):
@@ -60,3 +63,7 @@ def get_word(index):
     data['ex']=df['example'][index]
     return data
 
+def clean_data():
+    df=pd.read_csv('db.csv')    
+    df=df.dropna()
+    df.to_csv('db.csv')
